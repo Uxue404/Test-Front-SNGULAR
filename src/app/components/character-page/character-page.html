@@ -1,11 +1,16 @@
 
 <div class="w-full flex flex-col gap-4">
-  <div class="flex gap-4 justify-between items-center">
+  <div class="text-center">
+    <h1 class="text-4xl mb-4">Ejercició Frontend</h1>
+    <p class="text-xl">Base de datos de personajes</p>
+  </div>
+
+  <div class="flex flex-col sm:flex-row gap-4 justify-between sm:items-center">
     <app-text-field (valueTextField)="onSearch($event)"></app-text-field>
     <app-button [isActive]="showFavorites()" [labelButton]="'Favoritos'" (clickedButton)="getFavorites()" ></app-button>
   </div>
-  <div class="bg-gray-50 p-8 rounded-md grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
-    @for (character of displayList() ; track character.name){
+  <div class="bg-gray-50 p-8 rounded-md grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
+    @for (character of displayList() ; track character.id){
       <app-character-card
         [nameCharacter]="character.name"
         [urlImage]="character.image"
@@ -16,5 +21,8 @@
       </app-character-card>
     }
   </div>
-  <app-paginator class="w-auto" (nextPage)="nextPage()" (previousPage)="previousPage()" [currentPage]="currentPage" [totalPages]="totalPages"></app-paginator>
+  @if (!showFavorites()) {
+    <app-paginator class="w-auto" (nextPage)="nextPage()" (previousPage)="previousPage()" [currentPage]="currentPage" [totalPages]="totalPages"></app-paginator>
+  }
+
 </div>

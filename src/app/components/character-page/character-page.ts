@@ -32,10 +32,10 @@ export class CharacterPage implements OnInit {
   }
 
   loadCharacters(page: number) {
+    this.favoritesCharacters.set([])
     this.originalList.set([])
     this.listCharacters.set([])
     this.characterService.getCharacterPage(page).subscribe((response) => {
-      console.log(response);
       this.totalPages = response.info.pages;
       this.originalList.set(response.results);
       this.listCharacters.set(response.results);
@@ -43,7 +43,6 @@ export class CharacterPage implements OnInit {
   }
 
   onSearch(value: string): void {
-    console.log(value);
     this.findCharacters(value);
   }
 

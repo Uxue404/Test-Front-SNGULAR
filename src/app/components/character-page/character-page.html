@@ -10,7 +10,7 @@
     <app-button [isActive]="showFavorites()" [labelButton]="'Favoritos'" (clickedButton)="getFavorites()" ></app-button>
   </div>
   <div class="bg-gray-50 p-8 rounded-md grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
-    @for (character of displayList() ; track character.id){
+    @for (character of listCharacters() ; track character.id){
       <app-character-card
         [nameCharacter]="character.name"
         [urlImage]="character.image"

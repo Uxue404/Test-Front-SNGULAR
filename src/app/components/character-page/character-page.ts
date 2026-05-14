@@ -25,8 +25,6 @@ export class CharacterPage implements OnInit {
   favoritesCharacters = signal<CharacterResult[]>([]);
   showFavorites = signal<boolean>(false);
 
-  displayList = computed<CharacterResult[]>(() => this.listCharacters());
-
   ngOnInit() {
     this.loadCharacters(this.currentPage);
   }
@@ -51,8 +49,6 @@ export class CharacterPage implements OnInit {
   }
 
   findCharacters(value: string): void {
-    console.log(this.showFavorites(), this.favoritesCharacters(), this.listCharacters());
-
     const currentList = this.showFavorites() ? this.favoritesCharacters() : this.originalList();
     if (!value) return this.listCharacters.set(currentList);
 

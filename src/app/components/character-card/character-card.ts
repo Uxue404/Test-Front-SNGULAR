@@ -9,9 +9,9 @@ import { Button } from '../button/button';
   standalone: true
 })
 export class CharacterCard {
-  urlImage = input.required<string>();
-  nameCharacter = input.required<string>();
-  idCharacter = input.required<number>();
+  urlImage = input<string>('');
+  nameCharacter = input<string>('');
+  idCharacter = input<number>(0);
   addFavorite = output<number>()
   isFavorite = input<boolean>(false);
   openDetail = output();

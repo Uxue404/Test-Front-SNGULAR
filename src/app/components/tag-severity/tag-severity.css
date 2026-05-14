@@ -1,0 +1,39 @@
+.tag-alive {
+  background: rgba(34, 197, 94, 0.15);
+  color: #166534;
+}
+
+.tag-dead {
+  background: rgba(239, 68, 68, 0.15);
+  color: #991B1B;
+}
+
+.tag-unknown {
+  background: rgba(156, 163, 175, 0.2);
+  color: #374151;
+}
+
+.tag-male {
+  background: rgba(59, 130, 246, 0.15);
+  color: #1D4ED8;
+}
+
+.tag-female {
+  background: rgba(236, 72, 153, 0.15);
+  color: #BE185D;
+}
+
+.tag-genderless {
+  background: rgba(139, 92, 246, 0.15);
+  color: #6D28D9;
+}
+
+.tag-species {
+  background: rgba(34, 197, 94, 0.12);
+  color: #166534;
+}
+
+.tag-location {
+  background: #E5D3B3;
+  color: #5C4033;
+}

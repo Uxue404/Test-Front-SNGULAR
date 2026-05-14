@@ -1,0 +1,6 @@
+<button class="btn" [class.active]="isActive()" (click)="clickedButton.emit()">
+  <span class="material-symbols-outlined">{{nameIcon()}}</span>
+  @if (labelButton()){
+    <span>{{labelButton()}}</span>
+  }
+</button>

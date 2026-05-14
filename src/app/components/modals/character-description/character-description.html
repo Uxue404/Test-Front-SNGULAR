@@ -1,0 +1,21 @@
+<div class="bg-white p-2 flex flex-col gap-3 w-lg justify-center items-center relative">
+  <img [src]="character.image" class="img-fixed hover:cursor-pointer w-[60%]">
+  <button
+    class="absolute top-2 right-2 hover:cursor-pointer"
+    (click)="dialogRef.close()">
+    <span class="material-symbols-outlined">close</span>
+  </button>
+
+  <div class="w-full flex flex-col gap-4 justify-between items-center">
+    <app-tag-severity [type]="'status'"   [value]="character.status">
+    </app-tag-severity>
+    <app-tag-severity [type]="'gender'"   [value]="character.gender">
+    </app-tag-severity>
+    <app-tag-severity [type]="'species'"  [value]="character.species">
+    </app-tag-severity>
+    <app-tag-severity [type]="'location'" [value]="character.origin.name">
+    </app-tag-severity>
+    <app-tag-severity [type]="'location'" [value]="character.location.name">
+    </app-tag-severity>
+  </div>
+</div >

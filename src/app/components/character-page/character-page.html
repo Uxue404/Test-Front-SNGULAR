@@ -1,0 +1,20 @@
+
+<div class="w-full flex flex-col gap-4">
+  <div class="flex gap-4 justify-between items-center">
+    <app-text-field (valueTextField)="onSearch($event)"></app-text-field>
+    <app-button [isActive]="showFavorites()" [labelButton]="'Favoritos'" (clickedButton)="getFavorites()" ></app-button>
+  </div>
+  <div class="bg-gray-50 p-8 rounded-md grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
+    @for (character of displayList() ; track character.name){
+      <app-character-card
+        [nameCharacter]="character.name"
+        [urlImage]="character.image"
+        [idCharacter]="character.id"
+        [isFavorite]="isFavorite(character.id)"
+        (addFavorite)="onAddFavorite($event)"
+        (openDetail)="openModal(character)">
+      </app-character-card>
+    }
+  </div>
+  <app-paginator class="w-auto" (nextPage)="nextPage()" (previousPage)="previousPage()" [currentPage]="currentPage" [totalPages]="totalPages"></app-paginator>
+</div>

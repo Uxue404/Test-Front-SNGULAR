@@ -30,14 +30,18 @@ export class CharacterPage implements OnInit {
   }
 
   loadCharacters(page: number) {
-    this.favoritesCharacters.set([])
-    this.originalList.set([])
-    this.listCharacters.set([])
+    this.clearList()
     this.characterService.getCharacterPage(page).subscribe((response) => {
       this.totalPages = response.info.pages;
       this.originalList.set(response.results);
       this.listCharacters.set(response.results);
     });
+  }
+
+  clearList(): void {
+    this.favoritesCharacters.set([])
+    this.originalList.set([])
+    this.listCharacters.set([])
   }
 
   onSearch(value: string): void {
